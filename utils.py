@@ -6,8 +6,8 @@ from PIL import ImageDraw
 
 
 def load_weights(var_list, weights_file):
-    """
-    Loads and converts pre-trained weights.
+    """ Loads and converts pre-trained weights.
+
     :param var_list: list of network variables.
     :param weights_file: name of the binary file.
     :return: list of assign ops

@@ -2,13 +2,11 @@
 
 import numpy as np
 import tensorflow as tf
-from PIL import Image, ImageDraw
+from PIL import Image
 
 import yolo_v3
 import yolo_v3_tiny
-
-from utils import load_coco_names, draw_boxes, convert_to_original_size, \
-    load_weights, detections_boxes, non_max_suppression
+from utils import load_coco_names, draw_boxes, detections_boxes, non_max_suppression
 
 FLAGS = tf.app.flags.FLAGS
 
@@ -20,7 +18,7 @@ tf.app.flags.DEFINE_string(
 tf.app.flags.DEFINE_string(
     'weights_file', 'yolov3.weights', 'Binary file with detector weights')
 tf.app.flags.DEFINE_string(
-    'data_format', 'NCHW', 'Data format: NCHW (gpu only) / NHWC')
+    'data_format', 'NHWC', 'Data format: NCHW (gpu only) / NHWC')
 tf.app.flags.DEFINE_string(
     'ckpt_file', './saved_model/model.ckpt', 'Checkpoint file')
 tf.app.flags.DEFINE_bool(
